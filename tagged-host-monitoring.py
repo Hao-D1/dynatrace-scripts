@@ -13,7 +13,7 @@ def get_api_data(url, headers):
         return None
 
 # First API request to get entity IDs
-url1 = "https://sbu10597.sprint.dynatracelabs.com/api/v2/entities"
+url1 = "https://<YOUR_DYNATRACE_ENVIRONMENT>/api/v2/entities"
 params = {
     "entitySelector": "type(host), tag(\"Monitoring_mode\")"
 }
@@ -50,7 +50,7 @@ print(host_ids)
 # Second API request to get host monitoring status. Returns either True or False
 # Iterate through host_ids and call the second API for each host
 for host_id in host_ids:
-    url2 = "https://sbu10597.sprint.dynatracelabs.com/api/v2/settings/objects"
+    url2 = "https://<YOUR_DYNATRACE_ENVIRONMENT>/api/v2/settings/objects"
     params = {
         "schemaIds": "builtin:host.monitoring",
         "scopes": host_id,
